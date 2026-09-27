@@ -1,0 +1,32 @@
+{
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "schema_version": 1,
+    "hosts": [
+      "https://gh-proxy.org/https://raw.githubusercontent.com/lxlfpeng/UfcMaker/refs/heads/master",
+      "https://v4.gh-proxy.org/https://raw.githubusercontent.com/lxlfpeng/UfcMaker/refs/heads/master",
+      "https://v6.gh-proxy.org/https://raw.githubusercontent.com/lxlfpeng/UfcMaker/refs/heads/master",
+      "https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lxlfpeng/UfcMaker/refs/heads/master",
+      "https://axisnow.gh-proxy.org/https://raw.githubusercontent.com/lxlfpeng/UfcMaker/refs/heads/master"
+    ],
+    "qrcode": {
+      "image": "",
+      "url": "",
+      "title": "扫码下载 App"
+    },
+    "data_sources": [
+      {
+        "name": "UFC 官方",
+        "prefix": "/lxlfpeng/UfcMaker/refs/heads/master/",
+        "default": true
+      },
+      {
+        "name": "Sherdog",
+        "prefix": "",
+        "default": false
+      }
+    ]
+  },
+  "timestamp": 1790305255000
+}
