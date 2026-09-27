@@ -4,14 +4,14 @@
   "data": {
     "schema_version": 1,
     "hosts": [
-      "https://gh-proxy.org/https://raw.githubusercontent.com/lxlfpeng/UfcMaker/refs/heads/master",
-      "https://v4.gh-proxy.org/https://raw.githubusercontent.com/lxlfpeng/UfcMaker/refs/heads/master",
-      "https://v6.gh-proxy.org/https://raw.githubusercontent.com/lxlfpeng/UfcMaker/refs/heads/master",
-      "https://cdn.gh-proxy.org/https://raw.githubusercontent.com/lxlfpeng/UfcMaker/refs/heads/master",
-      "https://axisnow.gh-proxy.org/https://raw.githubusercontent.com/lxlfpeng/UfcMaker/refs/heads/master"
+      "https://gh-proxy.org/https://raw.githubusercontent.com",
+      "https://v4.gh-proxy.org/https://raw.githubusercontent.com",
+      "https://v6.gh-proxy.org/https://raw.githubusercontent.com",
+      "https://cdn.gh-proxy.org/https://raw.githubusercontent.com",
+      "https://axisnow.gh-proxy.org/https://raw.githubusercontent.com"
     ],
     "qrcode": {
-      "image": "",
+      "image": "asset/qr-code.png",
       "url": "",
       "title": "扫码下载 App"
     },
@@ -23,7 +23,7 @@
       },
       {
         "name": "Sherdog",
-        "prefix": "",
+        "prefix": "/lxlfpeng/DogMaker/refs/heads/main/",
         "default": false
       }
     ]
