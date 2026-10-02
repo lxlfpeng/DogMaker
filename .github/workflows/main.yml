@@ -43,7 +43,8 @@ jobs:
         LLM_MODEL: ${{ secrets.LLM_MODEL }}
         LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
       run: |
-        python run.py --email_pass ${{ secrets.EMAIL_TOKEN }}
+        # ⚠️ 必须带引号：EMAIL_TOKEN 未配置时表达式展开为空，光杆 `--email_pass` 会让 argparse 报错退出（exit 2）
+        python run.py --email_pass "${{ secrets.EMAIL_TOKEN }}"
     #Git提交并强制推送到仓库（只保留最近5个提交）
     # 原理：每次都用 git commit-tree 重建全部 5 个提交，确保最老的提交没有父节点（根提交），
     #       这样 force push 后远端历史就被真正截断了，老的提交链不再可达。
