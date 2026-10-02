@@ -26,7 +26,7 @@
 产出
 ----
 只出 `output/json/ufc_coming_data.json`（走 JsonWriterPipeline，**不写数据库表**；
-player 行由导出管道写）。字段契约见 Resources/contract/data-files.md §3；
+player 行由导出管道写）。字段契约见 MMABoxDocs/contract/data-files.md §3；
 `name` 归一为 App 内置展示映射的标识（`UFCFightNight` / `UFC<数字>`，见 sherdog.py）。
 
 详细取证与决策见 plans/upcoming-sherdog.md（2026-09-28）。

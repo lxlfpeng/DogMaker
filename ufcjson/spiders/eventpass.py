@@ -37,6 +37,7 @@ from ..items import UfcPassItem, UfcPassCardItem
 from ..sherdog import (
     SHERDOG, abs_url, build_player_item, cell_text, cls_token, iso_to_unix,
     map_division, map_method, parse_event_name, parse_location, result_token,
+    split_city_country,
 )
 
 
@@ -149,6 +150,7 @@ class EventpassSpider(scrapy.Spider):
             item["prelims_time"] = ""
             item["data_early_time"] = ""
             item["address"] = address
+            item["city"], item["country"] = split_city_country(address)
 
             exists = self._event_exists(url)
             if exists and not self._in_refresh_window(start_iso):

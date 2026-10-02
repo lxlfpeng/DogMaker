@@ -3,7 +3,7 @@
 > 文档：`DogMaker/plans/ranking-sherdog.md`　版本：v0.1（2026-09-28）
 > 范围：`DogMaker/ufcjson/spiders/ranking.py`（官方排名 → `ufc_ranking_data.json`）
 > 数据源：**Sherdog 自家榜单**（2026-09-28 用户拍板「ranking 用自家榜单」）
-> 上游依据：`Resources/contract/data-files.md` §4、《选手排名》v1.7（rail 13 档 / rank 语义 / 冠军带）
+> 上游依据：`MMABoxDocs/contract/data-files.md` §4、《选手排名》v1.7（rail 13 档 / rank 语义 / 冠军带）
 
 ---
 

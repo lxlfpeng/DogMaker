@@ -166,6 +166,23 @@ def parse_location(text_nodes):
     return ",".join(segs)
 
 
+def split_city_country(address):
+    """库内形态 `City,State,Country` → (city, country)，契约见《db-schema》§2.2。
+
+    规则：首段 = 城市、末段 = 国家；**单段 = 国家、城市留空**
+    （如源地址只有 `Brazil` 的场次）；空串 → 双空。
+
+    与 UfcMaker 的 `EventpassSpider.parse_address` 同口径（另含 Macao 特例，
+    属 ufc.com 时代的数据形态；Sherdog 侧走国家段别名归一，不需要）。
+    """
+    segs = [s.strip() for s in (address or "").split(",") if s.strip()]
+    if not segs:
+        return "", ""
+    if len(segs) == 1:
+        return "", segs[0]
+    return segs[0], segs[-1]
+
+
 def iso_to_unix(value):
     """`2026-09-19T00:00:00+00:00` → `1789776000`（字符串型 Unix 秒；解析失败返回空串）。
 

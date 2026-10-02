@@ -3,7 +3,7 @@
 > 文档：`DogMaker/plans/upcoming-sherdog.md`　版本：v0.1（2026-09-28）
 > 范围：`DogMaker/ufcjson/spiders/upcoming.py`（即将到来的赛事 → `ufc_coming_data.json`）
 > 目标入口：`https://www.sherdog.com/organizations/Ultimate-Fighting-Championship-UFC-2/recent-events/1` 的 **`#upcoming_tab`**（与历史赛事同页）
-> 上游依据：`Resources/contract/data-files.md` §3（coming 字段契约）、《赛程页面》v3.15（§3.2 字段表 / §5.6 文案口径）、《即将到来赛程详情页》
+> 上游依据：`MMABoxDocs/contract/data-files.md` §3（coming 字段契约）、《赛程页面》v3.15（§3.2 字段表 / §5.6 文案口径）、《即将到来赛程详情页》
 
 ---
 

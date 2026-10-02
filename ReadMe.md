@@ -295,6 +295,8 @@ output/
 | `name_cn` | TEXT | 赛事名称（中文） |
 | `title` | TEXT | 头条主赛标题（如 `Van vs. Pantoja 2`） |
 | `title_cn` | TEXT | 头条主赛标题（中文） |
+| `city` / `country` | TEXT | 举办城市 / 国家（英；从 `address` 拆段——首段=城市、末段=国家，单段=国家；2026-10-02 恢复） |
+| `city_cn` / `country_cn` | TEXT | 举办城市 / 国家（中；翻译回填） |
 | `banner` | TEXT | 赛事横幅**原图 URL**——Sherdog 源恒为空（App 本页禁用原图） |
 | `banner_local` | TEXT | 赛事横幅本地路径（**拼接封面**，见「封面拼接」） |
 | `address` | TEXT | 举办地（拆段：`City,Region,Country`，已去场馆、国家别名归一） |
@@ -464,7 +466,7 @@ python -m scripts.image_maintenance --all               # 补下载 + 清理（�
 | 表 | 字段（原文 → 译文） |
 |---|---|
 | `player` | `name` / `nick_name` / `city` / `country` / `division` / `status` / `team` / `style` |
-| `pass_event` | `name` / `title` / `address` |
+| `pass_event` | `name` / `title` / `address` / `city` / `country` |
 | `pass_card` | `end_method` / `card_division` |
 | `player`（JSON 列） | `history` → `history_cn`（整列全成功才写）；`wins_stats` → `wins_stats_cn`（只翻 `way`） |
 

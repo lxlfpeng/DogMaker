@@ -3,7 +3,7 @@
 > 文档：`DogMaker/plans/eventpass-sherdog.md`　版本：v0.2（2026-09-27 决策已拍板、S1/S2 已实施）
 > 范围：`DogMaker/ufcjson/spiders/eventpass.py`（历史赛事战报：列表 + 详情 + 随行选手页）
 > 目标入口：`https://www.sherdog.com/organizations/Ultimate-Fighting-Championship-UFC-2/recent-events/1`
-> 上游依据：《数据来源及图片地址》§1.1（数据源前缀）、`Resources/contract/data-files.md` §1（同构要求）、`Resources/contract/db-schema.md`（表结构契约）、《历史赛事页面》v1.20
+> 上游依据：《数据来源及图片地址》§1.1（数据源前缀）、`MMABoxDocs/contract/data-files.md` §1（同构要求）、`MMABoxDocs/contract/db-schema.md`（表结构契约）、《历史赛事页面》v1.20
 
 ---
 
@@ -99,9 +99,9 @@
 
 ---
 
-## 3. 字段映射（Sherdog → `ufc.db`，schema 不变）
+## 3. 字段映射（Sherdog → `ufc.db`）
 
-### 3.1 `pass_event`（13 列契约）
+### 3.1 `pass_event`（13 列 → **2026-10-02 恢复地点四列，17 列**）
 
 | 列 | 来源 | 转换规则 |
 |---|---|---|
@@ -109,6 +109,7 @@
 | `name` | 列表 `span[itemprop="name"]` | 以 `" - "` 拆分**取前半**：`UFC 331` / `UFC Fight Night 289` / `UFC`（Road to UFC 类无 `vs.` 时整串作 name） |
 | `title` | 同上 | `" - "` 后半：`Van vs. Pantoja 2` / `Rosas Jr. vs. Barcelos`；无 `vs.` 时留空 |
 | `address` | `td[itemprop="location"]` | 去旗帜 `img` 与空白 → 拆段去场馆（规则见下）→ 国家别名归一 |
+| `city` / `country` | `address` 拆段 | 首段=城市、末段=国家（单段=国家）——**2026-10-02 恢复写入**；`city_cn` / `country_cn` 走翻译链路 |
 | `main_time` | `meta[itemprop="startDate"]` | ISO → **Unix 秒字符串**（UTC 00:00 → 如 `1789776000`） |
 | `prelims_time` / `data_early_time` | — | 空串（Sherdog 无卡段时间） |
 | `banner` / `banner_local` | 拼图产物 | `banner` 空串（源站无海报）；`banner_local` = `full/<sha1("banner\|"+page)>.webp`（ufcjson/banner.py 用头条双方头像拼接，2 倍图 706×432；头像缺失则留空 → App 深色底降级） |
@@ -181,7 +182,7 @@
 | `ufcjson/sherdog.py` | **新增（2026-09-28）**：Sherdog 解析共用层——纯函数（名称/地址/时间/量级/方式映射、身高体重生日换算、历史造句）+ 选手页 `build_player_item()`；`eventpass` 与 `upcoming` 共用同一实现，防两套解析漂移（见 `plans/upcoming-sherdog.md` §4） |
 | `ufcjson/settings.py` | **不改**：礼仪与重试落在 spider 的 `custom_settings`（只影响 eventpass，不波及仍走 ufc.com 的其它爬虫） |
 | `ufcjson/pipelines/image.py` | `UfcDefaultPhotoPipeline`：不再注入 ufc.com 占位图（缺失 → 留空，App 用「加载失败默认图」降级） |
-| `ufcjson/pipelines/export_db.py` | `pass_event` 建表 DDL 去掉 4 个历史列（`city`/`country`/`city_cn`/`country_cn`）→ 与契约 **13 列**一致（仅在重建库时生效；现有库已是 13 列） |
+| `ufcjson/pipelines/export_db.py` | `pass_event` 建表 DDL：2026-09-30 曾去掉 4 个历史列（→13 列）；**2026-10-02 用户拍板恢复**（`city` / `country` 爬虫拆段写入、`_cn` 翻译回填；存量库 `scripts/backfill_event_place.py`） |
 | `run.py` | **2026-09-30 更新**：ufc.com 时代的两步收尾（`normalize_db()` 多行归一 / `reconcile_pass_card()` URL 对账）已随 `normalize.py`、`athlete_url.py` 一并**移除**——Sherdog 数据下它们本就是 no-op；收尾只剩「翻译 + 图片维护」。契约要求的两张辅助表（`player_url_alias` / `player_url_probe`）改由 `export_db.py` 的 player 分支建表，库中保持空表 |
 | `ReadMe.md` | 数据来源说明、抓取命令、爬虫行为更新 |
 | `plans/eventpass-sherdog.md` | 本文件（评审后按结论回填 §7） |
@@ -225,12 +226,12 @@
 ### 5.1 迁移（一次性）
 
 ```sql
--- 清行不清表：保留 13 列表结构与 player_url_alias / player_url_probe
+-- 清行不清表：保留 17 列表结构与 player_url_alias / player_url_probe
 DELETE FROM pass_event;
 DELETE FROM pass_card;
 ```
 
-> 若将来从空库重建：先修 `export_db.py` 的 DDL（§4），否则 `pass_event` 会多出 4 个历史列，破坏 13 列契约。
+> 若将来从空库重建：`export_db.py` 的 DDL 已含地点四列（2026-10-02 恢复 → 17 列），空库重建会直接产出 17 列。
 
 ### 5.2 全量回填
 
@@ -351,7 +352,7 @@ scrapy crawl eventpass -a pagination=true     # ≈9 页列表 + ≈823 详情�
 | 契约 | 出处 | 本计划对应 |
 |---|---|---|
 | 三段式地址拼接 / Sherdog 前缀 | 《数据来源及图片地址》§1.1 | DogMaker 发布同构产物（§1.2） |
-| 13 张表 schema | `Resources/contract/db-schema.md` | §3 逐列映射 + §4 DDL 修正 |
+| 13 张表 schema | `MMABoxDocs/contract/db-schema.md` | §3 逐列映射 + §4 DDL 修正 |
 | `pass_card` 排序/场次标依赖 | 《历史赛事页面》§3.3/§7.5 | §3.2 写入顺序（hero 先） |
 | 冠军战徽章判定「含冠军」 | 《历史赛事页面》§7.5 | §3.2 `Title Bout` 归一 |
 | 地点只拆 `address` | 《历史赛事页面》§5.4 | §3.1 地址拆段规则 |

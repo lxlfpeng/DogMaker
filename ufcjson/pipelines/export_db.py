@@ -38,10 +38,11 @@ class SqliteDbPipeline(object):
         # 2. 创建游标对象（用于执行SQL语句）
         self.cursor = self.conn.cursor()
         if isinstance(spider, EventpassSpider):
-            # ⚠️ 必须与契约一致：pass_event = 13 列（Resources/contract/db-schema.md §2.2）。
-            # 老版本 DDL 多建过 city / country / city_cn / country_cn 四列（声明未用），
-            # 实测导出库根本没有这四列、端上也按 13 列校验——重建库时按 13 列建，
-            # 不要把这四列加回来（地点只能靠 address 拆段）。
+            # ⚠️ 契约：pass_event = 17 列（MMABoxDocs/contract/db-schema.md §2.2）。
+            # 2026-10-02 用户拍板恢复 city / country / city_cn / country_cn 四列：
+            # 前两列由爬虫从 address 拆段写入（首段=城市、末段=国家；单段=国家），
+            # 后两列由翻译管线回填；存量库用 scripts/backfill_event_place.py 补。
+            # （沿革：2026-09-20 曾按「声明未用」把这四列从 DDL/INSERT 摘除，现按用户要求恢复。）
             self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS pass_event (
              id INTEGER PRIMARY KEY AUTOINCREMENT,  -- 主键
@@ -56,7 +57,11 @@ class SqliteDbPipeline(object):
              data_early_time TEXT,                  -- 早卡时间
              banner_local TEXT,                     -- 横幅(本地)
              name_cn TEXT,                          -- 名称(中文)
-             title_cn TEXT                          -- 头条主赛(中文)
+             title_cn TEXT,                         -- 头条主赛(中文)
+             city TEXT,                             -- 举办城市（从 address 拆出）
+             country TEXT,                          -- 举办国家（从 address 拆出）
+             city_cn TEXT,                          -- 举办城市(中文)
+             country_cn TEXT                        -- 举办国家(中文)
             )
             ''')
             self.cursor.execute('''
@@ -150,7 +155,8 @@ class SqliteDbPipeline(object):
             row = self.cursor.execute(
                 'SELECT id FROM pass_event WHERE page = ? LIMIT 1', (item.get('url', ''),)).fetchone()
             update_fields = ('name', 'name_cn', 'title', 'title_cn', 'banner', 'banner_local',
-                             'address', 'address_cn', 'main_time', 'prelims_time', 'data_early_time')
+                             'address', 'address_cn', 'main_time', 'prelims_time', 'data_early_time',
+                             'city', 'country', 'city_cn', 'country_cn')
             if row:
                 set_clause = ', '.join(f"{f} = CASE WHEN ? <> '' THEN ? ELSE {f} END" for f in update_fields)
                 args = []
@@ -161,14 +167,16 @@ class SqliteDbPipeline(object):
                 self.cursor.execute(f'UPDATE pass_event SET {set_clause} WHERE id = ?', args)
             else:
                 self.cursor.execute('''
-                         INSERT INTO pass_event (name,name_cn,title,title_cn,banner,banner_local,address,address_cn,page,main_time,prelims_time,data_early_time)
-                               VALUES (?,?,?,?,?,?,?,?,?,?,?,?)
+                         INSERT INTO pass_event (name,name_cn,title,title_cn,banner,banner_local,address,address_cn,page,main_time,prelims_time,data_early_time,city,country,city_cn,country_cn)
+                               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
                        ''', (item.get('name', ''), item.get('name_cn', ''), item.get('title', ''), item.get('title_cn', ''),
                              item.get('banner', ''),
                              item.get('banner_local', ''),
                              item.get('address', ''), item.get('address_cn', ''), item.get('url', ''),
                              item.get('main_time', ''),
-                             item.get('prelims_time', ''), item.get('data_early_time', '')
+                             item.get('prelims_time', ''), item.get('data_early_time', ''),
+                             item.get('city', ''), item.get('country', ''),
+                             item.get('city_cn', ''), item.get('country_cn', '')
                              ))
             # # 5. 提交更改
             self.conn.commit()
