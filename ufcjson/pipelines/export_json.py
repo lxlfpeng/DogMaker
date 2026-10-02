@@ -3,6 +3,7 @@ import os
 import sqlite3
 import time
 
+from ufcjson.banner import compose_event_banners
 from ufcjson.export import JsonObjectItemExporter, JsonObjectLinesItemExporter
 from ufcjson.items import UfcPassItem, UfcComingItem, UfcRankingItem
 from ufcjson.spiders.upcoming import UpcomingSpider
@@ -56,6 +57,12 @@ class JsonWriterPipeline(object):
     def close_spider(self):
         spider = self.crawler.spider
         if isinstance(spider, EventpassSpider):
+            # 先生成封面再导出 JSON：banner_local 是 ufc_pass_data.json 的字段
+            # （App《历史赛事页面》§7.3 封面带底图）；拼接为本地产物，失败不阻塞导出
+            try:
+                compose_event_banners(logger=spider.logger)
+            except Exception as e:
+                spider.logger.warning(f"赛事封面拼接失败（不阻塞 JSON 导出）: {e}")
             # eventpass 的 JSON 从数据库读取最新的 8 场赛事生成
             self._generate_pass_json_from_db('output/json/ufc_pass_data.json')
         elif self.json_exporter is not None:

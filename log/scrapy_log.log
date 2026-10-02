@@ -11,3 +11,149 @@
  'pyOpenSSL': '26.4.0 (OpenSSL 3.4.1 11 Feb 2025)',
  'cryptography': '50.0.1',
  'Platform': 'macOS-10.16-x86_64-i386-64bit'}
+2026-10-02 11:44:20 [scrapy.utils.log] INFO: Scrapy 2.19.0 started (bot: ufcjson)
+2026-10-02 11:44:21 [scrapy.utils.log] INFO: Versions:
+{'lxml': '6.1.3',
+ 'libxml2': '2.14.6',
+ 'cssselect': '1.5.0',
+ 'parsel': '1.11.0',
+ 'w3lib': '2.4.1',
+ 'Twisted': '26.4.0',
+ 'Python': '3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, '
+           '10:14:12) [Clang 14.0.6 ]',
+ 'pyOpenSSL': '26.4.0 (OpenSSL 3.4.1 11 Feb 2025)',
+ 'cryptography': '50.0.1',
+ 'Platform': 'macOS-10.16-x86_64-i386-64bit'}
+2026-10-02 11:44:21 [scrapy.addons] INFO: Enabled addons:
+[]
+2026-10-02 11:44:21 [scrapy.extensions.telnet] INFO: Telnet Password: caf356a18259339d
+2026-10-02 11:44:21 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.logcount.LogCount',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.throttle.AutoThrottle',
+ 'scrapy.extensions.remote_control.RemoteControl']
+2026-10-02 11:44:21 [scrapy.crawler] INFO: Overridden settings:
+{'AUTOTHROTTLE_ENABLED': True,
+ 'AUTOTHROTTLE_MAX_DELAY': 30,
+ 'AUTOTHROTTLE_START_DELAY': 1.5,
+ 'BOT_NAME': 'ufcjson',
+ 'CONCURRENT_REQUESTS_PER_DOMAIN': 1,
+ 'DOWNLOAD_DELAY': 1.5,
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'IMAGES_STORE': '/Users/apple/CodeProject/UFC-Project/DogMaker/ufcjson/../output/images',
+ 'LOG_FILE': './log/scrapy_log.log',
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'ufcjson.spiders',
+ 'RETRY_HTTP_CODES': [500, 502, 503, 504, 522, 524, 408, 429, 403],
+ 'RETRY_TIMES': 3,
+ 'SPIDER_MODULES': ['ufcjson.spiders'],
+ 'USER_AGENT': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) '
+               'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 '
+               'Safari/537.36'}
+2026-10-02 11:44:21 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2026-10-02 11:44:21 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.start.StartSpiderMiddleware',
+ 'scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'ufcjson.middlewares.UfcjsonSpiderMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.metacopy.MetaCopyDetectionMiddleware']
+2026-10-02 11:44:24 [scrapy.middleware] INFO: Enabled item pipelines:
+['ufcjson.pipelines.UfcCountryCodePipeline',
+ 'ufcjson.pipelines.UfcDefaultPhotoPipeline',
+ 'ufcjson.pipelines.ImagesDownloadPipeline',
+ 'ufcjson.pipelines.TranslatorPipeline',
+ 'ufcjson.pipelines.JsonWriterPipeline',
+ 'ufcjson.pipelines.SqliteDbPipeline']
+2026-10-02 11:44:24 [scrapy.core.engine] INFO: Spider opened
+2026-10-02 11:44:24 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2026-10-02 11:44:24 [eventpass] INFO: Spider opened: eventpass
+2026-10-02 11:44:24 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2026-10-02 11:44:24 [scrapy.extensions.remote_control] ERROR: Remote control HTTP server failed to start
+Traceback (most recent call last):
+  File "/Users/apple/CodeProject/PythonAPP/UfcMaker/.venv/lib/python3.12/site-packages/scrapy/extensions/remote_control.py", line 169, in start
+    write_job_file(
+  File "/Users/apple/CodeProject/PythonAPP/UfcMaker/.venv/lib/python3.12/site-packages/scrapy/utils/_remote_control.py", line 84, in write_job_file
+    path.parent.chmod(0o700)
+  File "/opt/anaconda3/lib/python3.12/pathlib.py", line 1327, in chmod
+    os.chmod(self, mode, follow_symlinks=follow_symlinks)
+PermissionError: [Errno 1] Operation not permitted: '/Users/apple/Library/Application Support/scrapy/job_files'
+2026-10-02 11:44:25 [eventpass] INFO: 请求列表页: https://www.sherdog.com/organizations/Ultimate-Fighting-Championship-UFC-2/recent-events/1
+2026-10-02 11:44:25 [eventpass] INFO: 第 1 页获取到 100 场赛事
+2026-10-02 11:44:25 [eventpass] INFO: UFC Fight Night 289 在刷新窗口内，重抓结果
+2026-10-02 11:44:25 [eventpass] INFO: 准备抓取详情: UFC Fight Night 289 - https://www.sherdog.com/events/UFC-Fight-Night-289-Rosas-Jr-vs-Barcelos-113789
+2026-10-02 11:44:25 [eventpass] INFO: [limit=1] 已达冒烟测试上限，停止派发详情
+2026-10-02 11:44:25 [eventpass] INFO: 第 1 页完成: 新增 0 场, 刷新 1 场, 跳过 0 场
+2026-10-02 11:44:27 [eventpass] INFO: 抓取赛事详情: UFC Fight Night 289 - https://www.sherdog.com/events/UFC-Fight-Night-289-Rosas-Jr-vs-Barcelos-113789
+2026-10-02 11:44:29 [eventpass] INFO: 抓取完成选手: Vanessa Demopoulos，战绩 11-9-0 (W-L-D)，历史 25 条
+2026-10-02 11:44:30 [eventpass] INFO: 抓取完成选手: Yazmin Jauregui，战绩 12-2-0 (W-L-D)，历史 15 条
+2026-10-02 11:44:32 [eventpass] INFO: 抓取完成选手: John Castaneda，战绩 21-9-1 (W-L-D)，历史 37 条
+2026-10-02 11:44:33 [eventpass] INFO: 抓取完成选手: Heili Alateng，战绩 18-10-2 (W-L-D)，历史 30 条
+2026-10-02 11:44:36 [eventpass] INFO: 抓取完成选手: Ricky Simon，战绩 22-8-1 (W-L-D)，历史 34 条
+2026-10-02 11:44:38 [eventpass] INFO: 抓取完成选手: Montel Jackson，战绩 16-4-0 (W-L-D)，历史 24 条
+2026-10-02 11:44:39 [eventpass] INFO: 抓取完成选手: Josiah Harrell，战绩 11-2-0 (W-L-D)，历史 18 条
+2026-10-02 11:44:41 [eventpass] INFO: 抓取完成选手: Elves Brener，战绩 17-6-0 (W-L-D)，历史 23 条
+2026-10-02 11:44:42 [eventpass] INFO: 抓取完成选手: Rodolfo Bellato，战绩 13-4-1 (W-L-D)，历史 19 条
+2026-10-02 11:44:45 [eventpass] INFO: 抓取完成选手: Christian Edwards，战绩 9-5-0 (W-L-D)，历史 17 条
+2026-10-02 11:44:47 [eventpass] INFO: 抓取完成选手: Robert Bryczek，战绩 18-8-0 (W-L-D)，历史 26 条
+2026-10-02 11:44:49 [eventpass] INFO: 抓取完成选手: Rodolfo Vieira，战绩 12-5-0 (W-L-D)，历史 17 条
+2026-10-02 11:44:50 [eventpass] INFO: 抓取完成选手: Rinya Nakamura，战绩 10-2-0 (W-L-D)，历史 12 条
+2026-10-02 11:44:52 [eventpass] INFO: 抓取完成选手: Brady Hiestand，战绩 9-2-0 (W-L-D)，历史 19 条
+2026-10-02 11:44:54 [eventpass] INFO: 抓取完成选手: Melissa Amaya，战绩 8-1-0 (W-L-D)，历史 9 条
+2026-10-02 11:44:57 [eventpass] INFO: 抓取完成选手: Valesca Machado，战绩 16-4-0 (W-L-D)，历史 21 条
+2026-10-02 11:44:58 [eventpass] INFO: 抓取完成选手: Mehemmedali Osmanli，战绩 11-2-0 (W-L-D)，历史 13 条
+2026-10-02 11:45:00 [eventpass] INFO: 抓取完成选手: Ilimbek Akylbek Uulu，战绩 10-3-0 (W-L-D)，历史 13 条
+2026-10-02 11:45:01 [eventpass] INFO: 抓取完成选手: Sedriques Dumas，战绩 10-6-0 (W-L-D)，历史 26 条
+2026-10-02 11:45:03 [eventpass] INFO: 抓取完成选手: Luis Hernandez，战绩 9-0-0 (W-L-D)，历史 15 条
+2026-10-02 11:45:05 [eventpass] INFO: 抓取完成选手: Norma Dumont，战绩 13-4-0 (W-L-D)，历史 17 条
+2026-10-02 11:45:07 [eventpass] INFO: 抓取完成选手: Ailin Perez，战绩 14-2-0 (W-L-D)，历史 17 条
+2026-10-02 11:45:09 [eventpass] INFO: 抓取完成选手: Raoni Barcelos，战绩 22-6-0 (W-L-D)，历史 28 条
+2026-10-02 11:45:11 [eventpass] INFO: 抓取完成选手: Raul Rosas Jr.，战绩 13-1-0 (W-L-D)，历史 20 条
+2026-10-02 11:45:11 [scrapy.core.engine] INFO: Closing spider (finished)
+2026-10-02 11:45:11 [eventpass] INFO: [banner] 封面拼接完成: 合成 0 场, 已存在跳过 819 场, 头像缺失缓拼 4 场, 失败 0 场, 耗时 0.0s
+2026-10-02 11:45:11 [eventpass] INFO: 爬取结束，共翻页 1 次，新增赛事 0 场，刷新 1 场，跳过 0 场
+2026-10-02 11:45:11 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 16492,
+ 'downloader/request_count': 26,
+ 'downloader/request_method_count/GET': 26,
+ 'downloader/response_bytes': 723717,
+ 'downloader/response_count': 26,
+ 'downloader/response_status_count/200': 26,
+ 'elapsed_time_seconds': 46.63395465699432,
+ 'file_count': 24,
+ 'file_status_count/uptodate': 24,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2026, 10, 2, 3, 45, 11, 547595, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 2817910,
+ 'httpcompression/response_count': 26,
+ 'item_scraped_count': 37,
+ 'items_per_minute': 48.26086956521739,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 37,
+ 'memusage/max': 72531968,
+ 'memusage/startup': 72531968,
+ 'request_depth_max': 2,
+ 'response_received_count': 26,
+ 'responses_per_minute': 33.91304347826087,
+ 'scheduler/dequeued': 26,
+ 'scheduler/dequeued/memory': 26,
+ 'scheduler/enqueued': 26,
+ 'scheduler/enqueued/memory': 26,
+ 'start_time': datetime.datetime(2026, 10, 2, 3, 44, 24, 913440, tzinfo=datetime.timezone.utc)}
+2026-10-02 11:45:11 [scrapy.core.engine] INFO: Spider closed (finished)

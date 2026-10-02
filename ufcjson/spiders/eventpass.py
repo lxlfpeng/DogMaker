@@ -12,7 +12,8 @@
       · 头条主赛 = div.fight_card（Method/Round/Time 在 table.fight_card_resume 里）
       · 其余对局 = table.new_table.result 的 tr[itemprop=subEvent]，按 Match 号降序
       · Sherdog 不标主/副/早卡分区（UFC 300/325/331/332 实测无 Prelim 字样）→ card_type 全量 Main
-      · 无赔率；赛事图仅 image_vs（实测 200×100，过小）→ banner 留空（App 端深色底降级）
+      · 无赔率；封面不用 image_vs（实测 200×100，过小、且是头像拼图非海报）
+        —— 收尾由 ufcjson/banner.py 用头条双方头像拼成封面写入 banner_local
 
 选手：/fighter/<Name>-<id>（只取本场对战涉及的选手）
 
@@ -214,8 +215,10 @@ class EventpassSpider(scrapy.Spider):
     def parse_detail(self, response):
         item = response.meta["item"]
         self.logger.info(f"抓取赛事详情: {item['name']} - {response.url}")
-        # Sherdog 赛事图只有 image_vs（200×100，过小），不作横幅：App 端 banner_local 空
-        # 时走深色纯色底 + 渐变（《历史赛事页面》§8.1 降级矩阵）
+        # Sherdog 无赛事海报（image_vs 200×100 过小，见 plans/eventpass-sherdog.md D3）：
+        # banner 原图恒为空串；封面由收尾的 ufcjson/banner.py 用头条双方头像拼接写入
+        # banner_local。拼不出的少数赛事保持空串 → App 端深色纯色底 + 渐变降级
+        # （《历史赛事页面》§8.1 降级矩阵）
         item["banner"] = ""
 
         cards = []

@@ -63,7 +63,7 @@
   - 场次序号（Match）、左右 fighter（`div.fighter_list.left/.right`，含 `a[itemprop="url"]` + `span.final_result`）、`span.weight_class`、`td.winby > b`（结束方式）、`R`、`Time` 三列。
 - **排序**：hero = 头条主赛（当晚最后一场）；表格按 **Match 号降序**（第 1 行 = 联合主赛，最后一行 = 当晚第一场）。
 - ⚠️ **无主赛/副赛/早场分区标记**：UFC 300 / 325 / 331 / 332 实测均无 `Prelim` 字样，hero 也只有一个 `MAIN EVENT` 标签。
-- ⚠️ **无赔率**、**无可用赛事封面**（事件图仅 `image_vs/<id>`，实测 200×100，too small 给 353×216 封面槽）。
+- ⚠️ **无赔率**；事件图仅 `image_vs/<id>`（实测 200×100，too small 给 353×216 封面槽）不可作封面 —— 2026-10-02 改判：由头条双方头像拼接生成（§7 D3）。
 - 结果时效实测：FN 289（2026-09-26 当晚赛事，09-27 抓取）11 场对局**结果/方式/回合/时间已全部就绪**。
 
 ### 2.3 选手页（`/fighter/<Name>-<id>`）
@@ -91,7 +91,7 @@
 |---|---|---|
 | 卡位分区（主/副/早卡） | `card_type` 无真值 | §7 D1（已拍板：全量 `Main`） |
 | 赔率 | `red_odds`/`blue_odds` 空 | App 侧空/`-` 不展示（PRD §7.5-4）→ 可接受 |
-| 赛事封面 | `banner` 无合适图 | §7 D3（已拍板：留空 → App 深色底降级） |
+| 赛事封面 | `banner` 无合适图（`image_vs` 200×100） | §7 D3（**2026-10-02 改判**：头条双方头像拼接 → `banner_local`；拼不出的少数仍走 App 深色底降级） |
 | reach / leg_reach / style / status / cover / 性别 | `player` 对应列为空 | App 各自降级/隐藏（PRD §8.1、选手详情页 §8） |
 | 女子量级前缀 | `Flyweight` 等不区分男女 | §7 D2（已拍板：仅 Strawweight 加前缀） |
 | **老赛事量级** | 约 2009 及更早的赛事，Sherdog 的 `span.weight_class` **存在但为空**（实证 UFC 103）→ 全量回填约 **1,550** 场对局 `card_division` 为空 | 留空不猜（App 端场次行只显示场次标）；如需补，后续可从 ufc.com 库交叉回填（UfcMaker 侧旧数据对老赛事有量级） |
@@ -111,7 +111,7 @@
 | `address` | `td[itemprop="location"]` | 去旗帜 `img` 与空白 → 拆段去场馆（规则见下）→ 国家别名归一 |
 | `main_time` | `meta[itemprop="startDate"]` | ISO → **Unix 秒字符串**（UTC 00:00 → 如 `1789776000`） |
 | `prelims_time` / `data_early_time` | — | 空串（Sherdog 无卡段时间） |
-| `banner` / `banner_local` | — | 空串（§7 D3） |
+| `banner` / `banner_local` | 拼图产物 | `banner` 空串（源站无海报）；`banner_local` = `full/<sha1("banner\|"+page)>.webp`（ufcjson/banner.py 用头条双方头像拼接，2 倍图 706×432；头像缺失则留空 → App 深色底降级） |
 | `name_cn` / `title_cn` / `address_cn` | 翻译链路 | 不变（跑完后统一补翻） |
 
 **地址拆段规则**（对齐 ufc.com 库内形态 `City,State,Country` / `City,Country`，App 端「第一段=城市、末段=国家」依赖它）：
@@ -263,7 +263,8 @@ scrapy crawl eventpass -a pagination=true     # ≈9 页列表 + ≈823 详情�
 |---|---|---|---|
 | D1 | 无卡位分区数据，`card_type` 怎么填 | ✅ **已拍板：全部 `Main`**（用户 2026-09-27 确认）——详情页只显示「主赛」档、全部对局可见；场次标 = 头条主赛/联合主赛/主赛…（副赛/早场 tab 自然隐藏，属 App 设计的兜底行为） | 按 Match 数启发式推断（等于编数据，不做）；留空（会导致三档 tab 全隐藏、对局列表为空，**不可行**）。⚠️ 已知差异：Sherdog 源的副赛/早场档位缺失 |
 | D2 | 女子量级前缀 | ✅ **按推荐**：仅 `Strawweight → Women's`（UFC 无男子草量级，可靠）；其余不加前缀，「女子蝇/雏/羽」登记为已知差异 | 建女性选手维护表（后续可从 ufc.com 交叉回填） |
-| D3 | 赛事封面 `banner` | ✅ **已拍板：留空**（用户 2026-09-27 确认）——App 用深色纯色底 + 渐变，PRD §8.1 明确兜底 | 用 200×100 `image_vs` 拉伸（糊，不做） |
+| D3 | 赛事封面 `banner` | ✅ **2026-10-02 改判（原「留空」作废，用户确认）**：`ufcjson/banner.py` 用**头条双方头像**（200×300 本地图）Pillow 拼接 → `banner_local`（2 倍图 706×432，蓝左红右、**双图紧贴无缝 + VS 圆徽压中缝**、半区 cover 裁切且锚点偏上保头，与 App 封面带 353×216 同比例）；`banner` 仍为空串。头像缺失的少数赛事保持空串 → App 深色纯色底 + 渐变降级（PRD §8.1 兜底不变） | 用 200×100 `image_vs` 拉伸（糊 + 站点水印，不做）；改设计后回填 `python -m scripts.banner_maintenance --force` |
+| D3′ | 封面拼图比例基准 | ⚠️ App 实现（layout/dimens）= **353×216、centerCrop**，据此出 2 倍图；PRD §7.3 / 画布（231:3）为 **353×172**（2026-10-01 加高 12 后的最新设计）—— **App 与最新设计未同步**，属既有差异、非本方案引入；App 若改为 172 需 `--force` 重拼（改 BANNER_H） | 保持现状待 App 侧对齐 |
 | D4 | 迁移方式 | ✅ **按推荐**：清表重建（Sherdog 自洽库） | 混合保留 → 同赛事 ufc.com/Sherdog 双行，App 展会重复卡 |
 | D5 | `player` 表范围 | ✅ **2026-09-30 收口**：`athlete`（ufc.com 版）**已整文件移除**（含其 pipeline 分支与独有的 `birth_place.py`）⇒ 不再产生跨源重复行；`player` = 事件驱动覆盖（历史赛事 + 未开打战卡 + 榜单选手，约 2,000 人级）。**名册覆盖**（没上过战卡的选手）本期不补 —— 若要补，另立「Sherdog 名册枚举」计划 | 原「等 athlete 切换后统一收口」已作废 |
 | D6 | `name` / `title` 拆分 | ✅ **按推荐**：按 §3.1 规则（`UFC 331` / `Van vs. Pantoja 2`；无 `vs.` 的整串作 name） | 保留整串作 name（列表兜底展示会带对阵名） |
