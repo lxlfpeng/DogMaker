@@ -1,0 +1,131 @@
+{"code":0,"msg":"success","data":[{"name": "Islam Makhachev", "page": "https://www.sherdog.com/fighter/Islam-Makhachev-76836", "rank_name": "Men's Pound-for-Pound", "rank": 1}
+,{"name": "Petr Yan", "page": "https://www.sherdog.com/fighter/Petr-Yan-186873", "rank_name": "Men's Pound-for-Pound", "rank": 2}
+,{"name": "Justin Gaethje", "page": "https://www.sherdog.com/fighter/Justin-Gaethje-46648", "rank_name": "Men's Pound-for-Pound", "rank": 3}
+,{"name": "Merab Dvalishvili", "page": "https://www.sherdog.com/fighter/Merab-Dvalishvili-157355", "rank_name": "Men's Pound-for-Pound", "rank": 4}
+,{"name": "Ilia Topuria", "page": "https://www.sherdog.com/fighter/Ilia-Topuria-202445", "rank_name": "Men's Pound-for-Pound", "rank": 5}
+,{"name": "Ciryl Gane", "page": "https://www.sherdog.com/fighter/Ciryl-Gane-293973", "rank_name": "Men's Pound-for-Pound", "rank": 6}
+,{"name": "Alexander Volkanovski", "page": "https://www.sherdog.com/fighter/Alexander-Volkanovski-101527", "rank_name": "Men's Pound-for-Pound", "rank": 7}
+,{"name": "Joshua Van", "page": "https://www.sherdog.com/fighter/Joshua-Van-365973", "rank_name": "Men's Pound-for-Pound", "rank": 8}
+,{"name": "Tom Aspinall", "page": "https://www.sherdog.com/fighter/Tom-Aspinall-65231", "rank_name": "Men's Pound-for-Pound", "rank": 9}
+,{"name": "Alex Pereira", "page": "https://www.sherdog.com/fighter/Alex-Pereira-224511", "rank_name": "Men's Pound-for-Pound", "rank": 10}
+,{"name": "Valentina Shevchenko", "page": "https://www.sherdog.com/fighter/Valentina-Shevchenko-45384", "rank_name": "Women's Pound-for-Pound", "rank": 1}
+,{"name": "Cristiane “Cyborg” Justino", "page": "https://www.sherdog.com/fighter/Cristiane-Justino-14477", "rank_name": "Women's Pound-for-Pound", "rank": 2}
+,{"name": "Weili Zhang", "page": "https://www.sherdog.com/fighter/Weili-Zhang-186663", "rank_name": "Women's Pound-for-Pound", "rank": 3}
+,{"name": "Kayla Harrison", "page": "https://www.sherdog.com/fighter/Kayla-Harrison-237039", "rank_name": "Women's Pound-for-Pound", "rank": 4}
+,{"name": "Natalia Silva", "page": "https://www.sherdog.com/fighter/Natalia-Silva-193033", "rank_name": "Women's Pound-for-Pound", "rank": 5}
+,{"name": "Seika Izawa", "page": "https://www.sherdog.com/fighter/Seika-Izawa-375399", "rank_name": "Women's Pound-for-Pound", "rank": 6}
+,{"name": "Alexa Grasso", "page": "https://www.sherdog.com/fighter/Alexa-Grasso-142845", "rank_name": "Women's Pound-for-Pound", "rank": 7}
+,{"name": "Manon Fiorot", "page": "https://www.sherdog.com/fighter/Manon-Fiorot-228689", "rank_name": "Women's Pound-for-Pound", "rank": 8}
+,{"name": "Erin Blanchfield", "page": "https://www.sherdog.com/fighter/Erin-Blanchfield-283251", "rank_name": "Women's Pound-for-Pound", "rank": 9}
+,{"name": "Dakota Ditcheva", "page": "https://www.sherdog.com/fighter/Dakota-Ditcheva-320485", "rank_name": "Women's Pound-for-Pound", "rank": 10}
+,{"name": "Ciryl Gane", "page": "https://www.sherdog.com/fighter/Ciryl-Gane-293973", "rank_name": "Heavyweight", "rank": 0}
+,{"name": "Tom Aspinall", "page": "https://www.sherdog.com/fighter/Tom-Aspinall-65231", "rank_name": "Heavyweight", "rank": 1}
+,{"name": "Francis Ngannou", "page": "https://www.sherdog.com/fighter/Francis-Ngannou-152341", "rank_name": "Heavyweight", "rank": 2}
+,{"name": "Alexander Volkov", "page": "https://www.sherdog.com/fighter/Alexander-Volkov-40951", "rank_name": "Heavyweight", "rank": 3}
+,{"name": "Sergei Pavlovich", "page": "https://www.sherdog.com/fighter/Sergei-Pavlovich-184051", "rank_name": "Heavyweight", "rank": 4}
+,{"name": "Josh Hokit", "page": "https://www.sherdog.com/fighter/Josh-Hokit-433441", "rank_name": "Heavyweight", "rank": 5}
+,{"name": "Phil De Fries", "page": "https://www.sherdog.com/fighter/Phil-De-Fries-46202", "rank_name": "Heavyweight", "rank": 6}
+,{"name": "Curtis Blaydes", "page": "https://www.sherdog.com/fighter/Curtis-Blaydes-172939", "rank_name": "Heavyweight", "rank": 7}
+,{"name": "Waldo Cortes-Acosta", "page": "https://www.sherdog.com/fighter/Waldo-Cortes-Acosta-190909", "rank_name": "Heavyweight", "rank": 8}
+,{"name": "Vadim Nemkov", "page": "https://www.sherdog.com/fighter/Vadim-Nemkov-143059", "rank_name": "Heavyweight", "rank": 9}
+,{"name": "Alex Pereira", "page": "https://www.sherdog.com/fighter/Alex-Pereira-224511", "rank_name": "Light Heavyweight", "rank": 0}
+,{"name": "Magomed Ankalaev", "page": "https://www.sherdog.com/fighter/Magomed-Ankalaev-170785", "rank_name": "Light Heavyweight", "rank": 1}
+,{"name": "Carlos Ulberg", "page": "https://www.sherdog.com/fighter/Carlos-Ulberg-84291", "rank_name": "Light Heavyweight", "rank": 2}
+,{"name": "Jiri Prochazka", "page": "https://www.sherdog.com/fighter/Jiri-Prochazka-97529", "rank_name": "Light Heavyweight", "rank": 3}
+,{"name": "Khalil Rountree", "page": "https://www.sherdog.com/fighter/Khalil-Rountree-77674", "rank_name": "Light Heavyweight", "rank": 4}
+,{"name": "Paulo Costa", "page": "https://www.sherdog.com/fighter/Paulo-Costa-147165", "rank_name": "Light Heavyweight", "rank": 5}
+,{"name": "Azamat Murzakanov", "page": "https://www.sherdog.com/fighter/Azamat-Murzakanov-60203", "rank_name": "Light Heavyweight", "rank": 6}
+,{"name": "Dominick Reyes", "page": "https://www.sherdog.com/fighter/Dominick-Reyes-145941", "rank_name": "Light Heavyweight", "rank": 7}
+,{"name": "Volkan Oezdemir", "page": "https://www.sherdog.com/fighter/Volkan-Oezdemir-58503", "rank_name": "Light Heavyweight", "rank": 8}
+,{"name": "Jamahal Hill", "page": "https://www.sherdog.com/fighter/Jamahal-Hill-280417", "rank_name": "Light Heavyweight", "rank": 9}
+,{"name": "Sean Strickland", "page": "https://www.sherdog.com/fighter/Sean-Strickland-30452", "rank_name": "Middleweight", "rank": 0}
+,{"name": "Khamzat Chimaev", "page": "https://www.sherdog.com/fighter/Khamzat-Chimaev-280021", "rank_name": "Middleweight", "rank": 1}
+,{"name": "Dricus Du Plessis", "page": "https://www.sherdog.com/fighter/Dricus-Du-Plessis-146193", "rank_name": "Middleweight", "rank": 2}
+,{"name": "Nassourdine Imavov", "page": "https://www.sherdog.com/fighter/Nassourdine-Imavov-217405", "rank_name": "Middleweight", "rank": 3}
+,{"name": "Gregory Rodrigues", "page": "https://www.sherdog.com/fighter/Gregory-Rodrigues-176275", "rank_name": "Middleweight", "rank": 4}
+,{"name": "Anthony Hernandez", "page": "https://www.sherdog.com/fighter/Anthony-Hernandez-86783", "rank_name": "Middleweight", "rank": 5}
+,{"name": "Brendan Allen", "page": "https://www.sherdog.com/fighter/Brendan-Allen-201703", "rank_name": "Middleweight", "rank": 6}
+,{"name": "Caio Borralho", "page": "https://www.sherdog.com/fighter/Caio-Borralho-188043", "rank_name": "Middleweight", "rank": 7}
+,{"name": "Joe Pyfer", "page": "https://www.sherdog.com/fighter/Joe-Pyfer-239253", "rank_name": "Middleweight", "rank": 8}
+,{"name": "Costello van Steenis", "page": "https://www.sherdog.com/fighter/Costello-van-Steenis-152859", "rank_name": "Middleweight", "rank": 9}
+,{"name": "Islam Makhachev", "page": "https://www.sherdog.com/fighter/Islam-Makhachev-76836", "rank_name": "Welterweight", "rank": 0}
+,{"name": "Michael Morales", "page": "https://www.sherdog.com/fighter/Michael-Morales-268041", "rank_name": "Welterweight", "rank": 1}
+,{"name": "Ian Garry", "page": "https://www.sherdog.com/fighter/Ian-Garry-268923", "rank_name": "Welterweight", "rank": 2}
+,{"name": "Carlos Prates", "page": "https://www.sherdog.com/fighter/Carlos-Prates-95593", "rank_name": "Welterweight", "rank": 3}
+,{"name": "Sean Brady", "page": "https://www.sherdog.com/fighter/Sean-Brady-126971", "rank_name": "Welterweight", "rank": 4}
+,{"name": "Jack Della Maddalena", "page": "https://www.sherdog.com/fighter/Jack-Della-Maddalena-208155", "rank_name": "Welterweight", "rank": 5}
+,{"name": "Ramazan Kuramagomedov", "page": "https://www.sherdog.com/fighter/Ramazan-Kuramagomedov-241397", "rank_name": "Welterweight", "rank": 6}
+,{"name": "Gabriel Bonfim", "page": "https://www.sherdog.com/fighter/Gabriel-Bonfim-185083", "rank_name": "Welterweight", "rank": 7}
+,{"name": "Thad Jean", "page": "https://www.sherdog.com/fighter/Thad-Jean-327903", "rank_name": "Welterweight", "rank": 8}
+,{"name": "Shamil Musaev", "page": "https://www.sherdog.com/fighter/Shamil-Musaev-119289", "rank_name": "Welterweight", "rank": 9}
+,{"name": "Justin Gaethje", "page": "https://www.sherdog.com/fighter/Justin-Gaethje-46648", "rank_name": "Lightweight", "rank": 0}
+,{"name": "Ilia Topuria", "page": "https://www.sherdog.com/fighter/Ilia-Topuria-202445", "rank_name": "Lightweight", "rank": 1}
+,{"name": "Arman Tsarukyan", "page": "https://www.sherdog.com/fighter/Arman-Tsarukyan-213913", "rank_name": "Lightweight", "rank": 2}
+,{"name": "Charles Oliveira", "page": "https://www.sherdog.com/fighter/Charles-Oliveira-30300", "rank_name": "Lightweight", "rank": 3}
+,{"name": "Max Holloway", "page": "https://www.sherdog.com/fighter/Max-Holloway-38671", "rank_name": "Lightweight", "rank": 4}
+,{"name": "Paddy Pimblett", "page": "https://www.sherdog.com/fighter/Paddy-Pimblett-84902", "rank_name": "Lightweight", "rank": 5}
+,{"name": "Usman Nurmagomedov", "page": "https://www.sherdog.com/fighter/Usman-Nurmagomedov-296291", "rank_name": "Lightweight", "rank": 6}
+,{"name": "Benoit St. Denis", "page": "https://www.sherdog.com/fighter/Benoit-St-Denis-317103", "rank_name": "Lightweight", "rank": 7}
+,{"name": "Mauricio Ruffy", "page": "https://www.sherdog.com/fighter/Mauricio-Ruffy-192545", "rank_name": "Lightweight", "rank": 8}
+,{"name": "Salahdine Parnasse", "page": "https://www.sherdog.com/fighter/Salahdine-Parnasse-172169", "rank_name": "Lightweight", "rank": 9}
+,{"name": "Alexander Volkanovski", "page": "https://www.sherdog.com/fighter/Alexander-Volkanovski-101527", "rank_name": "Featherweight", "rank": 0}
+,{"name": "Movsar Evloev", "page": "https://www.sherdog.com/fighter/Movsar-Evloev-183539", "rank_name": "Featherweight", "rank": 1}
+,{"name": "Diego Lopes", "page": "https://www.sherdog.com/fighter/Diego-Lopes-112531", "rank_name": "Featherweight", "rank": 2}
+,{"name": "Rajabali Shaidullaev", "page": "https://www.sherdog.com/fighter/Rajabali-Shaidullaev-365469", "rank_name": "Featherweight", "rank": 3}
+,{"name": "Jean Silva", "page": "https://www.sherdog.com/fighter/Jean-Silva-239947", "rank_name": "Featherweight", "rank": 4}
+,{"name": "Lerone Murphy", "page": "https://www.sherdog.com/fighter/Lerone-Murphy-209721", "rank_name": "Featherweight", "rank": 5}
+,{"name": "Arnold Allen", "page": "https://www.sherdog.com/fighter/Arnold-Allen-97499", "rank_name": "Featherweight", "rank": 6}
+,{"name": "Aljamain Sterling", "page": "https://www.sherdog.com/fighter/Aljamain-Sterling-66313", "rank_name": "Featherweight", "rank": 7}
+,{"name": "Youssef Zalal", "page": "https://www.sherdog.com/fighter/Youssef-Zalal-229985", "rank_name": "Featherweight", "rank": 8}
+,{"name": "Steve Garcia", "page": "https://www.sherdog.com/fighter/Steve-Garcia-50916", "rank_name": "Featherweight", "rank": 9}
+,{"name": "Petr Yan", "page": "https://www.sherdog.com/fighter/Petr-Yan-186873", "rank_name": "Bantamweight", "rank": 0}
+,{"name": "Merab Dvalishvili", "page": "https://www.sherdog.com/fighter/Merab-Dvalishvili-157355", "rank_name": "Bantamweight", "rank": 1}
+,{"name": "Sean O’Malley", "page": "https://www.sherdog.com/fighter/Sean-O'Malley-135099", "rank_name": "Bantamweight", "rank": 2}
+,{"name": "Yadong Song", "page": "https://www.sherdog.com/fighter/Yadong-Song-103807", "rank_name": "Bantamweight", "rank": 3}
+,{"name": "Umar Nurmagomedov", "page": "https://www.sherdog.com/fighter/Umar-Nurmagomedov-240893", "rank_name": "Bantamweight", "rank": 4}
+,{"name": "Mario Bautista", "page": "https://www.sherdog.com/fighter/Mario-Bautista-128107", "rank_name": "Bantamweight", "rank": 5}
+,{"name": "Cory Sandhagen", "page": "https://www.sherdog.com/fighter/Cory-Sandhagen-112869", "rank_name": "Bantamweight", "rank": 6}
+,{"name": "David Martinez", "page": "https://www.sherdog.com/fighter/David-Martinez-221351", "rank_name": "Bantamweight", "rank": 7}
+,{"name": "Deiveson Figueiredo", "page": "https://www.sherdog.com/fighter/Deiveson-Figueiredo-110485", "rank_name": "Bantamweight", "rank": 8}
+,{"name": "Mitchell McKee", "page": "https://www.sherdog.com/fighter/Mitchell-McKee-57183", "rank_name": "Bantamweight", "rank": 9}
+,{"name": "Joshua Van", "page": "https://www.sherdog.com/fighter/Joshua-Van-365973", "rank_name": "Flyweight", "rank": 0}
+,{"name": "Alexandre Pantoja", "page": "https://www.sherdog.com/fighter/Alexandre-Pantoja-25023", "rank_name": "Flyweight", "rank": 1}
+,{"name": "Manel Kape", "page": "https://www.sherdog.com/fighter/Manel-Kape-101189", "rank_name": "Flyweight", "rank": 2}
+,{"name": "Brandon Royval", "page": "https://www.sherdog.com/fighter/Brandon-Royval-83851", "rank_name": "Flyweight", "rank": 3}
+,{"name": "Tatsuro Taira", "page": "https://www.sherdog.com/fighter/Tatsuro-Taira-293975", "rank_name": "Flyweight", "rank": 4}
+,{"name": "Kyoji Horiguchi", "page": "https://www.sherdog.com/fighter/Kyoji-Horiguchi-64413", "rank_name": "Flyweight", "rank": 5}
+,{"name": "Lone'er Kavanagh", "page": "https://www.sherdog.com/fighter/Lone'er-Kavanagh-213249", "rank_name": "Flyweight", "rank": 6}
+,{"name": "Brandon Moreno", "page": "https://www.sherdog.com/fighter/Brandon-Moreno-80173", "rank_name": "Flyweight", "rank": 7}
+,{"name": "Ramazonbek Temirov", "page": "https://www.sherdog.com/fighter/Ramazonbek-Temirov-215649", "rank_name": "Flyweight", "rank": 8}
+,{"name": "Amir Albazi", "page": "https://www.sherdog.com/fighter/Amir-Albazi-51365", "rank_name": "Flyweight", "rank": 9}
+,{"name": "Mackenzie Dern", "page": "https://www.sherdog.com/fighter/Mackenzie-Dern-137171", "rank_name": "Women's Strawweight", "rank": 0}
+,{"name": "Virna Jandiroba", "page": "https://www.sherdog.com/fighter/Virna-Jandiroba-137557", "rank_name": "Women's Strawweight", "rank": 1}
+,{"name": "Tatiana Suarez", "page": "https://www.sherdog.com/fighter/Tatiana-Suarez-161107", "rank_name": "Women's Strawweight", "rank": 2}
+,{"name": "Gillian Robertson", "page": "https://www.sherdog.com/fighter/Gillian-Robertson-219015", "rank_name": "Women's Strawweight", "rank": 3}
+,{"name": "Denise Gomes", "page": "https://www.sherdog.com/fighter/Denise-Gomes-382138", "rank_name": "Women's Strawweight", "rank": 4}
+,{"name": "Xiaonan Yan", "page": "https://www.sherdog.com/fighter/Xiaonan-Yan-67828", "rank_name": "Women's Strawweight", "rank": 5}
+,{"name": "Alexia Thainara", "page": "https://www.sherdog.com/fighter/Alexia-Thainara-287251", "rank_name": "Women's Strawweight", "rank": 6}
+,{"name": "Fatima Kline", "page": "https://www.sherdog.com/fighter/Fatima-Kline-300151", "rank_name": "Women's Strawweight", "rank": 7}
+,{"name": "Amanda Lemos", "page": "https://www.sherdog.com/fighter/Amanda-Lemos-173973", "rank_name": "Women's Strawweight", "rank": 8}
+,{"name": "Iasmin Lucindo", "page": "https://www.sherdog.com/fighter/Iasmin-Lucindo-264861", "rank_name": "Women's Strawweight", "rank": 9}
+,{"name": "Valentina Shevchenko", "page": "https://www.sherdog.com/fighter/Valentina-Shevchenko-45384", "rank_name": "Women's Flyweight", "rank": 0}
+,{"name": "Natalia Silva", "page": "https://www.sherdog.com/fighter/Natalia-Silva-193033", "rank_name": "Women's Flyweight", "rank": 1}
+,{"name": "Alexa Grasso", "page": "https://www.sherdog.com/fighter/Alexa-Grasso-142845", "rank_name": "Women's Flyweight", "rank": 2}
+,{"name": "Manon Fiorot", "page": "https://www.sherdog.com/fighter/Manon-Fiorot-228689", "rank_name": "Women's Flyweight", "rank": 3}
+,{"name": "Erin Blanchfield", "page": "https://www.sherdog.com/fighter/Erin-Blanchfield-283251", "rank_name": "Women's Flyweight", "rank": 4}
+,{"name": "Dakota Ditcheva", "page": "https://www.sherdog.com/fighter/Dakota-Ditcheva-320485", "rank_name": "Women's Flyweight", "rank": 5}
+,{"name": "Liz Carmouche", "page": "https://www.sherdog.com/fighter/Liz-Carmouche-67007", "rank_name": "Women's Flyweight", "rank": 6}
+,{"name": "Maycee Barber", "page": "https://www.sherdog.com/fighter/Maycee-Barber-253613", "rank_name": "Women's Flyweight", "rank": 7}
+,{"name": "Jasmine Jasudavicius", "page": "https://www.sherdog.com/fighter/Jasmine-Jasudavicius-311001", "rank_name": "Women's Flyweight", "rank": 8}
+,{"name": "Sabrinna De Sousa", "page": "https://www.sherdog.com/fighter/Sabrinna-de-Sousa-353195", "rank_name": "Women's Flyweight", "rank": 9}
+,{"name": "Kayla Harrison", "page": "https://www.sherdog.com/fighter/Kayla-Harrison-237039", "rank_name": "Women's Bantamweight", "rank": 0}
+,{"name": "Julianna Pena", "page": "https://www.sherdog.com/fighter/Julianna-Pena-50883", "rank_name": "Women's Bantamweight", "rank": 1}
+,{"name": "Ailin Perez", "page": "https://www.sherdog.com/fighter/Ailin-Perez-297989", "rank_name": "Women's Bantamweight", "rank": 2}
+,{"name": "Joselyne Edwards", "page": "https://www.sherdog.com/fighter/Joselyne-Edwards-156643", "rank_name": "Women's Bantamweight", "rank": 3}
+,{"name": "Yana Santos", "page": "https://www.sherdog.com/fighter/Yana-Santos-49412", "rank_name": "Women's Bantamweight", "rank": 4}
+,{"name": "Norma Dumont", "page": "https://www.sherdog.com/fighter/Norma-Dumont-233587", "rank_name": "Women's Bantamweight", "rank": 5}
+,{"name": "Ketlen Vieira", "page": "https://www.sherdog.com/fighter/Ketlen-Vieira-178961", "rank_name": "Women's Bantamweight", "rank": 6}
+,{"name": "Luana Santos", "page": "https://www.sherdog.com/fighter/Luana-Santos-327683", "rank_name": "Women's Bantamweight", "rank": 7}
+,{"name": "Beatriz Mesquita", "page": "https://www.sherdog.com/fighter/Beatriz-Mesquita-451242", "rank_name": "Women's Bantamweight", "rank": 8}
+,{"name": "Karol Rosa", "page": "https://www.sherdog.com/fighter/Karol-Rosa-115135", "rank_name": "Women's Bantamweight", "rank": 9}
+],"timestamp":1790906329898}
