@@ -1,0 +1,23 @@
+{
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "schema_version": 1,
+    "last_updated": "2026-10-07T15:27:00+08:00",
+    "last_updated_ts": 1791358020,
+    "generator": "UfcMaker",
+    "spiders_run": [],
+    "athlete_count": 2924,
+    "pass_event_count": 823,
+    "upcoming_event_count": 9,
+    "ranking_count": 130,
+    "db_md5": "49395085933c742dc0132fbe8f63124a",
+    "db_size": 18485248,
+    "db_zip_md5": "29b48a23bce841461d6493197a47a347",
+    "db_zip_size": 2614533,
+    "_db_data_version": 1,
+    "_coming_hash": "bcd32a213b80bf4fa29f0845d3e23687",
+    "_ranking_hash": "62576eaaac8728302403300e2a07f852"
+  },
+  "timestamp": 1791369043966
+}
